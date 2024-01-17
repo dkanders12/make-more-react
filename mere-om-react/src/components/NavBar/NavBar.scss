@@ -1,0 +1,19 @@
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  width: 80%;
+  .listOrder {
+    list-style-type: none;
+    padding: 7px 15px;
+    text-decoration: none;
+    background-color: aquamarine;
+    border-radius: 6px;
+    .fix {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
