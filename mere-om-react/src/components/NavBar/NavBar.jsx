@@ -15,6 +15,11 @@ export const NavBar = () => {
             Timer
           </NavLink>
         </li>
+        <li className="listOrder">
+          <NavLink className="fix" to="Fetch">
+            Fetch
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
