@@ -20,6 +20,11 @@ export const NavBar = () => {
             Fetch
           </NavLink>
         </li>
+        <li className="listOrder">
+          <NavLink className="fix" to="Cart">
+            Cart
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
