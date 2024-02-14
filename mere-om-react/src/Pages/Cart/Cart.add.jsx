@@ -4,7 +4,9 @@ import { CartAdd } from "../../components/Cart.add/CartAdd";
 export const Cart = () => {
   return (
     <section>
-      <CartAdd></CartAdd>
+      <CartAdd>
+        
+      </CartAdd>
     </section>
   );
 };
