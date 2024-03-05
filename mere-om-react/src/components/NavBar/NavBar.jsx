@@ -25,6 +25,16 @@ export const NavBar = () => {
             Cart
           </NavLink>
         </li>
+        <li className="listOrder">
+          <NavLink className="fix" to="Supabase">
+            Supabase
+          </NavLink>
+        </li>
+        <li className="listOrder">
+          <NavLink className="fix" to="SubaSignup">
+            SupaSignup
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
