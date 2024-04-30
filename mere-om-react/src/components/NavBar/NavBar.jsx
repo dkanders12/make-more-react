@@ -35,6 +35,11 @@ export const NavBar = () => {
             SupaSignup
           </NavLink>
         </li>
+        <li className="listOrder">
+          <NavLink className="fix" to="Hygraph">
+            Hygraph
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

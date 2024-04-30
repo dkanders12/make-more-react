@@ -8,6 +8,7 @@ import { Fetch } from "./Pages/Fetch/Fetch";
 import { SubaSignup } from "./Pages/SignupSuba/SubaSignup";
 import { NavBar } from "./components/NavBar/NavBar";
 import "./App.scss";
+import Hygraph from "./components/Hygraph/Hygraph";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Supabase" element={<SupaPages />} />
         <Route path="/SubaSignup" element={<SubaSignup />} />
+        <Route path="/Hygraph" element={<Hygraph />} />
       </Routes>
     </>
   );
