@@ -1,12 +1,13 @@
 import React from "react";
-import { CartAdd } from "../../components/Cart.add/CartAdd";
+import { Cards } from "../../components/Cards/Cards";
+import { CardMaker } from "../../constants";
 
 export const Cart = () => {
   return (
     <section>
-      <CartAdd>
-        
-      </CartAdd>
+      {CardMaker.map((buy) => (
+        <Cards key={buy.id} {...buy} />
+      ))}
     </section>
   );
 };

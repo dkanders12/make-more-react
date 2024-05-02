@@ -1,17 +1,13 @@
-import { CardMaker } from "../../constants";
+import React from "react";
 
-const Cards = () => {
+export const Cards = (props) => {
   return (
     <>
-      {CardMaker.map((cardmaker) => (
-        <article className="CardsContainer" key={cardmaker.id}>
-          <h3>{cardmaker.title}</h3>
-          <p>{cardmaker.content}</p>
-          <a href="">Add to cart</a>
-        </article>
-      ))}
+      <article className="CardsContainer" key={props.id}>
+        <h3>{props.title}</h3>
+        <p>{props.content}</p>
+        <a href="">Add to cart</a>
+      </article>
     </>
   );
 };
-
-export default Cards;
