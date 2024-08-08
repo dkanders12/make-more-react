@@ -9,6 +9,7 @@ import { SubaSignup } from "./Pages/SignupSuba/SubaSignup";
 import { NavBar } from "./components/NavBar/NavBar";
 import "./App.scss";
 import Hygraph from "./components/Hygraph/Hygraph";
+import LoginForm from "./components/Supabase/Login/Login";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/Supabase" element={<SupaPages />} />
         <Route path="/SubaSignup" element={<SubaSignup />} />
         <Route path="/Hygraph" element={<Hygraph />} />
+        <Route path="/LoginSupa" element={<LoginForm />} />
       </Routes>
     </>
   );

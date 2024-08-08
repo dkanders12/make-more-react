@@ -40,6 +40,11 @@ export const NavBar = () => {
             Hygraph
           </NavLink>
         </li>
+        <li className="listOrder">
+          <NavLink className="fix" to="LoginSupa">
+            Login Supa
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
