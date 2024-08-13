@@ -1,73 +1,56 @@
-import { useForm } from "react-hook-form";
-import { fetchPostersData } from "../PostersSupa/SupabaseController"; // Import the fetchPostersData function
-import { createClient } from "@supabase/supabase-js";
+import React, { useState } from "react";
+import { supabase } from "../Login/Login.controller";
 
-export const SignUp = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+const SignUpForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
-  const onSubmit = async (data) => {
-    console.log(data);
+  const handleSignUp = async (event) => {
+    event.preventDefault();
 
-    try {
-      // Fetch data from Supabase using the fetchPostersData function
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
 
-      // Log the fetched data
-
-      // Send the form data to Supabase or handle it as needed
-      const supabaseUrl = "https://amqdbfnmrgjfasacuigk.supabase.co";
-      const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
-      const client = createClient(supabaseUrl, supabaseKey);
-      const { user, error } = await client.auth.signUp({
-        email: data.email,
-        password: data.password,
-      });
-      if (error) {
-        console.error("Error signing up:", error.message);
-      } else {
-        console.log("Sign up successful:", user);
-      }
-    } catch (error) {
-      console.error("Error fetching posters:", error);
+    if (error) {
+      setError(error.message);
+    } else {
+      setMessage(
+        "Sign-up successful! Please check your email for confirmation."
+      );
+      console.log("Signed up successfully:", data);
     }
   };
 
   return (
-    <section className="signup">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="hidden" defaultValue="1" {...register("org_id")} />
+    <form onSubmit={handleSignUp}>
+      <h2>Sign Up</h2>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      {message && <p style={{ color: "green" }}>{message}</p>}
+      <div>
+        <label>Email:</label>
         <input
-          type="hidden"
-          defaultValue="1234"
-          {...register("refresh_token")}
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
         />
-        <input type="hidden" defaultValue="1" {...register("groups")} />
-        <div>
-          <label htmlFor="text">Firstname</label>
-          <input type="text" {...register("firstname", { required: true })} />
-        </div>
-        <div>
-          <label htmlFor="text">Lastname</label>
-          <input type="text" {...register("lastname", { required: true })} />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input type="email" {...register("email", { required: true })} />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            {...register("password", { required: true })}
-          />
-        </div>
-        <div>
-          <button type="submit">Sign Up</button>
-        </div>
-      </form>
-    </section>
+      </div>
+      <div>
+        <label>Password:</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </div>
+      <button type="submit">Sign Up</button>
+    </form>
   );
 };
+
+export default SignUpForm;

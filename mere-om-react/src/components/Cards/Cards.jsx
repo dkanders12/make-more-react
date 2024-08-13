@@ -6,7 +6,6 @@ export const Cards = (props) => {
       <article className="CardsContainer" key={props.id}>
         <h3>{props.title}</h3>
         <p>{props.content}</p>
-        <a href="">Add to cart</a>
       </article>
     </>
   );

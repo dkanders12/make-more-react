@@ -30,11 +30,7 @@ export const NavBar = () => {
             Supabase
           </NavLink>
         </li>
-        <li className="listOrder">
-          <NavLink className="fix" to="SubaSignup">
-            SupaSignup
-          </NavLink>
-        </li>
+
         <li className="listOrder">
           <NavLink className="fix" to="Hygraph">
             Hygraph
@@ -43,6 +39,16 @@ export const NavBar = () => {
         <li className="listOrder">
           <NavLink className="fix" to="LoginSupa">
             Login Supa
+          </NavLink>
+        </li>
+        <li className="listOrder">
+          <NavLink className="fix" to="Signup">
+            signup
+          </NavLink>
+        </li>
+        <li className="listOrder">
+          <NavLink className="fix" to="FetchSupa">
+            Supafetch
           </NavLink>
         </li>
       </ul>

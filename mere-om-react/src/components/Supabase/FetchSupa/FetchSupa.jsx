@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"; // Corrected import
-import { fetchMusicData } from "./Fetch.Data";
+import { fetchMusicData } from "../FetchSupa/Fetch.Data";
 
 const FetchSupa = () => {
   const [MusicData, setMusicData] = useState([]);
@@ -13,14 +13,12 @@ const FetchSupa = () => {
     fetchData();
   }, []);
 
-  console.log(MusicData);
-
   return (
     <div>
       {MusicData.length > 0 ? (
         <ul>
           {MusicData.map((item, index) => (
-            <li key={index}>{item.name}</li> // Adjust according to your data structure
+            <li key={index}>{item.name}</li>
           ))}
         </ul>
       ) : (
