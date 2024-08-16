@@ -37,7 +37,6 @@ const LoginForm = () => {
       if (data.session) {
         localStorage.setItem("access_token", data.session.access_token);
         console.log(localStorage);
-
         navigate("/FetchSupa");
       }
     } catch (err) {
