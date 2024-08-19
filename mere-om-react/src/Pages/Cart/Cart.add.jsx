@@ -43,7 +43,6 @@ export const Cart = () => {
         <span>
           {cartItems.reduce((total, item) => total + item.quantity, 0)}
         </span>{" "}
-        {/* Display total number of items in the cart */}
       </NavLink>
     </section>
   );
